@@ -82,6 +82,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  String searchedLocation = 'Lagos';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -175,6 +176,13 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             child: TextField(
               decoration: const InputDecoration(
+                suffixIcon: IconButton(
+                    onPressed: null,
+                    icon: Icon(
+                      Icons.search,
+                      size: 30,
+                      color: Colors.grey,
+                    )),
                 hintStyle: TextStyle(
                     fontSize: 20,
                     color: Colors.grey,
@@ -185,12 +193,57 @@ class _HomeScreenState extends State<HomeScreen> {
                 contentPadding: EdgeInsets.all(15),
               ),
               onChanged: (value) {
-                // do something
+                searchedLocation = value; // do something
               },
             ),
           ),
+          const SizedBox(
+            height: 15,
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text(
+                'Categories',
+                style: TextStyle(
+                    fontSize: 27,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Raleway'),
+              )
+            ],
+          )
         ],
       ),
     );
   }
 }
+
+// TextField(
+// decoration: const InputDecoration(
+// hintStyle: TextStyle(
+// fontSize: 20,
+// color: Colors.grey,
+// fontFamily: 'Raleway',
+// fontWeight: FontWeight.w500),
+// border: InputBorder.none,
+// hintText: 'New York City',
+// contentPadding: EdgeInsets.all(15),
+// ),
+// onChanged: (value) {
+// searchedLocation = value; // do something
+// },
+// ),
+
+// class SearchResults extends StatefulWidget {
+//   const SearchResults({Key? key}) : super(key: key);
+//
+//   @override
+//   State<SearchResults> createState() => _SearchResultsState();
+// }
+//
+// class _SearchResultsState extends State<SearchResults> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container();
+//   }
+// }
