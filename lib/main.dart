@@ -86,6 +86,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
       body: Column(
         children: [
@@ -158,7 +159,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Container(
             height: 80,
             margin: const EdgeInsets.symmetric(horizontal: 20),
-            padding: const EdgeInsets.only(left: 16, top: 15),
+            padding: const EdgeInsets.only(left: 16, top: 15, right: 25),
             decoration: BoxDecoration(
               boxShadow: const [
                 BoxShadow(
@@ -176,13 +177,11 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             child: TextField(
               decoration: const InputDecoration(
-                suffixIcon: IconButton(
-                    onPressed: null,
-                    icon: Icon(
-                      Icons.search,
-                      size: 30,
-                      color: Colors.grey,
-                    )),
+                suffixIcon: Icon(
+                  Icons.mic_none_outlined,
+                  size: 31,
+                  color: Colors.grey,
+                ),
                 hintStyle: TextStyle(
                     fontSize: 20,
                     color: Colors.grey,
@@ -202,60 +201,50 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            height: 300,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-            ),
-            child: ClipRRect(
-                borderRadius: BorderRadius.circular(30),
-                child: Image.asset('assets/house-locator.png')),
+            height: 350,
+            child: Image.asset('assets/nobgredhouse.png'),
           ),
-
-          // SearchBar(onSearch: onSearch, onItemFound: onItemFound)
-          // Column(
-          //   mainAxisAlignment: MainAxisAlignment.start,
-          //   children: const [
-          //     Text(
-          //       'Categories',
-          //       style: TextStyle(
-          //           fontSize: 27,
-          //           fontWeight: FontWeight.w500,
-          //           fontFamily: 'Raleway'),
-          //     )
-          //   ],
-          // )
+          Stack(
+            children: [
+              Column(
+                children: [
+                  SingleChildScrollView(
+                    child: Container(
+                      height: 280,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
+                          color: const Color.fromRGBO(99, 25, 236, 1)),
+                      child: Container(
+                        height: 10,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SingleChildScrollView(
+                child: Container(
+                  alignment: Alignment.topCenter,
+                  padding: new EdgeInsets.only(
+                      top: MediaQuery.of(context).size.height * .58,
+                      right: 20.0,
+                      left: 20.0),
+                  child: new Container(
+                    height: 200.0,
+                    width: MediaQuery.of(context).size.width,
+                    child: new Card(
+                      color: Colors.white,
+                      elevation: 4.0,
+                    ),
+                  ),
+                ),
+              )
+            ],
+          )
         ],
       ),
     );
   }
 }
-
-// TextField(
-// decoration: const InputDecoration(
-// hintStyle: TextStyle(
-// fontSize: 20,
-// color: Colors.grey,
-// fontFamily: 'Raleway',
-// fontWeight: FontWeight.w500),
-// border: InputBorder.none,
-// hintText: 'New York City',
-// contentPadding: EdgeInsets.all(15),
-// ),
-// onChanged: (value) {
-// searchedLocation = value; // do something
-// },
-// ),
-
-// class SearchResults extends StatefulWidget {
-//   const SearchResults({Key? key}) : super(key: key);
-//
-//   @override
-//   State<SearchResults> createState() => _SearchResultsState();
-// }
-//
-// class _SearchResultsState extends State<SearchResults> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container();
-//   }
-// }
