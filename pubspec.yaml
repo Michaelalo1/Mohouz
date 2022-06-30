@@ -19,8 +19,7 @@ dependencies:
 
 
   cupertino_icons: ^1.0.2
-  speech_recognition: "^0.3.0"
-  permission_handler: ^10.0.0
+  flappy_search_bar: 1.4.1
 
 
 dev_dependencies:

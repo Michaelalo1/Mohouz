@@ -202,7 +202,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
-            children: [
+            children: const [
               Text(
                 'Categories',
                 style: TextStyle(
