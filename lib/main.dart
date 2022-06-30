@@ -86,7 +86,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(255, 255, 255, 1),
+      backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
       body: Column(
         children: [
           Container(
@@ -200,18 +200,30 @@ class _HomeScreenState extends State<HomeScreen> {
           const SizedBox(
             height: 15,
           ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: const [
-              Text(
-                'Categories',
-                style: TextStyle(
-                    fontSize: 27,
-                    fontWeight: FontWeight.w500,
-                    fontFamily: 'Raleway'),
-              )
-            ],
-          )
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            height: 300,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(30),
+            ),
+            child: ClipRRect(
+                borderRadius: BorderRadius.circular(30),
+                child: Image.asset('assets/house-locator.png')),
+          ),
+
+          // SearchBar(onSearch: onSearch, onItemFound: onItemFound)
+          // Column(
+          //   mainAxisAlignment: MainAxisAlignment.start,
+          //   children: const [
+          //     Text(
+          //       'Categories',
+          //       style: TextStyle(
+          //           fontSize: 27,
+          //           fontWeight: FontWeight.w500,
+          //           fontFamily: 'Raleway'),
+          //     )
+          //   ],
+          // )
         ],
       ),
     );
