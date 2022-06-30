@@ -90,158 +90,176 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
       body: Column(
         children: [
-          Container(
-            padding: const EdgeInsets.only(top: 85, left: 20),
-            child: Column(
-              children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    const Icon(
-                      Icons.location_on_rounded,
-                      size: 50,
-                      color: Color.fromRGBO(99, 25, 236, 1),
-                    ),
-                    const SizedBox(
-                      width: 7,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text(
-                          'Discover',
-                          style: TextStyle(
-                              color: Colors.black87,
-                              fontSize: 28.0,
-                              decoration: TextDecoration.none,
-                              fontWeight: FontWeight.normal),
-                        ),
-                        const SizedBox(
-                          height: 3,
-                        ),
-                        RichText(
-                          text: const TextSpan(
-                              text: 'Your ',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontFamily: 'Raleway-Regular',
-                                  fontSize: 24.0,
-                                  decoration: TextDecoration.none,
-                                  fontWeight: FontWeight.normal),
-                              children: [
-                                TextSpan(
-                                  text: 'dream home.',
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 25.0,
-                                      decoration: TextDecoration.none,
-                                      fontWeight: FontWeight.w900,
-                                      letterSpacing: 1),
-                                ),
-                              ]),
-                        )
-                        // Text(
-                        //   'Your Dream Home',
-                        //   style: TextStyle(
-                        //       color: Colors.black87,
-                        //       fontSize: 20.0,
-                        //       decoration: TextDecoration.none,
-                        //       fontWeight: FontWeight.normal),
-                        // ),
-                      ],
-                    )
-                  ],
-                ),
-              ],
+          Expanded(
+            flex: 3,
+            child: Container(
+              padding: const EdgeInsets.only(top: 85, left: 20),
+              child: Column(
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const Icon(
+                        Icons.location_on_rounded,
+                        size: 50,
+                        color: Color.fromRGBO(99, 25, 236, 1),
+                      ),
+                      const SizedBox(
+                        width: 7,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'Discover',
+                            style: TextStyle(
+                                color: Colors.black87,
+                                fontSize: 28.0,
+                                decoration: TextDecoration.none,
+                                fontWeight: FontWeight.normal),
+                          ),
+                          const SizedBox(
+                            height: 3,
+                          ),
+                          RichText(
+                            text: const TextSpan(
+                                text: 'Your ',
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: 'Raleway-Regular',
+                                    fontSize: 24.0,
+                                    decoration: TextDecoration.none,
+                                    fontWeight: FontWeight.normal),
+                                children: [
+                                  TextSpan(
+                                    text: 'dream home.',
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 25.0,
+                                        decoration: TextDecoration.none,
+                                        fontWeight: FontWeight.w900,
+                                        letterSpacing: 1),
+                                  ),
+                                ]),
+                          )
+                          // Text(
+                          //   'Your Dream Home',
+                          //   style: TextStyle(
+                          //       color: Colors.black87,
+                          //       fontSize: 20.0,
+                          //       decoration: TextDecoration.none,
+                          //       fontWeight: FontWeight.normal),
+                          // ),
+                        ],
+                      )
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
           const SizedBox(height: 30),
-          Container(
-            height: 80,
-            margin: const EdgeInsets.symmetric(horizontal: 20),
-            padding: const EdgeInsets.only(left: 16, top: 15, right: 25),
-            decoration: BoxDecoration(
-              boxShadow: const [
-                BoxShadow(
-                  color: Color.fromRGBO(220, 220, 220, 1),
-                  blurRadius: 100.0, // soften the shadow
-                  spreadRadius: 1.0, //extend the shadow
-                  offset: Offset(
-                    1.0, // Move to right 10  horizontally
-                    1.0, // Move to bottom 10 Vertically
-                  ),
-                )
-              ],
-              borderRadius: BorderRadius.circular(30),
-              color: const Color.fromRGBO(255, 255, 255, 1),
-            ),
-            child: TextField(
-              decoration: const InputDecoration(
-                suffixIcon: Icon(
-                  Icons.mic_none_outlined,
-                  size: 31,
-                  color: Colors.grey,
-                ),
-                hintStyle: TextStyle(
-                    fontSize: 20,
-                    color: Colors.grey,
-                    fontFamily: 'Raleway',
-                    fontWeight: FontWeight.w500),
-                border: InputBorder.none,
-                hintText: 'New York City',
-                contentPadding: EdgeInsets.all(15),
+          Expanded(
+            flex: 1,
+            child: Container(
+              height: 80,
+              margin: const EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.only(left: 16, top: 15, right: 25),
+              decoration: BoxDecoration(
+                boxShadow: const [
+                  BoxShadow(
+                    color: Color.fromRGBO(220, 220, 220, 1),
+                    blurRadius: 100.0, // soften the shadow
+                    spreadRadius: 1.0, //extend the shadow
+                    offset: Offset(
+                      1.0, // Move to right 10  horizontally
+                      1.0, // Move to bottom 10 Vertically
+                    ),
+                  )
+                ],
+                borderRadius: BorderRadius.circular(30),
+                color: const Color.fromRGBO(255, 255, 255, 1),
               ),
-              onChanged: (value) {
-                searchedLocation = value; // do something
-              },
+              child: TextField(
+                decoration: const InputDecoration(
+                  suffixIcon: Icon(
+                    Icons.mic_none_outlined,
+                    size: 31,
+                    color: Colors.grey,
+                  ),
+                  hintStyle: TextStyle(
+                      fontSize: 20,
+                      color: Colors.grey,
+                      fontFamily: 'Raleway',
+                      fontWeight: FontWeight.w500),
+                  border: InputBorder.none,
+                  hintText: 'New York City',
+                  contentPadding: EdgeInsets.all(15),
+                ),
+                onChanged: (value) {
+                  searchedLocation = value; // do something
+                },
+              ),
             ),
           ),
           const SizedBox(
             height: 15,
           ),
-          Container(
-            margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            height: 350,
-            child: Image.asset('assets/nobgredhouse.png'),
+          Expanded(
+            flex: 3,
+            child: Container(
+              margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              height: 350,
+              child: Image.asset('assets/nobgredhouse.png'),
+            ),
           ),
-          Stack(
-            children: [
-              Column(
-                children: [
-                  SingleChildScrollView(
-                    child: Container(
-                      height: 280,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50),
-                          color: const Color.fromRGBO(99, 25, 236, 1)),
+          Expanded(
+            flex: 3,
+            child: Stack(
+              children: [
+                Column(
+                  children: [
+                    SingleChildScrollView(
                       child: Container(
-                        height: 10,
+                        height: 280,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50),
+                            borderRadius: BorderRadius.circular(50),
+                            color: const Color.fromRGBO(99, 25, 236, 1)),
+                        child: Container(
+                          height: 10,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SingleChildScrollView(
+                  child: Expanded(
+                    child: Container(
+                      alignment: Alignment.topCenter,
+                      padding: EdgeInsets.only(
+                          top: MediaQuery.of(context).size.height * .58,
+                          right: 20.0,
+                          left: 20.0),
+                      child: Expanded(
+                        child: Container(
+                          height: 200.0,
+                          width: MediaQuery.of(context).size.width,
+                          child: Expanded(
+                            child: const Card(
+                              color: Colors.white,
+                              elevation: 4.0,
+                            ),
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ],
-              ),
-              SingleChildScrollView(
-                child: Container(
-                  alignment: Alignment.topCenter,
-                  padding: new EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height * .58,
-                      right: 20.0,
-                      left: 20.0),
-                  child: new Container(
-                    height: 200.0,
-                    width: MediaQuery.of(context).size.width,
-                    child: new Card(
-                      color: Colors.white,
-                      elevation: 4.0,
-                    ),
-                  ),
-                ),
-              )
-            ],
+                )
+              ],
+            ),
           )
         ],
       ),
