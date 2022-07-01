@@ -208,26 +208,104 @@ class _HomeScreenState extends State<HomeScreen> {
             alignment: Alignment.bottomCenter,
             children: [
               SingleChildScrollView(
-                child: Container(
-                  margin: const EdgeInsets.only(top: 20),
-                  height: 190,
-                  decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(50),
-                      topLeft: Radius.circular(50),
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(
+                    minWidth: double.infinity,
+                    minHeight: 200,
+                    maxWidth: double.infinity,
+                    maxHeight: 400,
+                  ),
+                  child: Container(
+                    margin: const EdgeInsets.only(top: 20),
+                    height: 190,
+                    decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(50),
+                        topLeft: Radius.circular(50),
+                      ),
+                      color: Color.fromRGBO(99, 25, 236, 1),
                     ),
-                    color: Color.fromRGBO(99, 25, 236, 1),
+                    child: Column(
+                      children: const [
+                        IconButton(
+                            onPressed: null,
+                            icon: Icon(
+                              Icons.minimize_rounded,
+                              size: 40,
+                              color: Color.fromRGBO(255, 255, 255, 0.6),
+                            )),
+                        TextButton(
+                          onPressed: null,
+                          child: Text(
+                            'Login',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Raleway',
+                                fontSize: 23,
+                                color: Colors.white),
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),
-              Container(
-                height: 70,
-                decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(60),
-                      topLeft: Radius.circular(60),
-                    ),
-                    color: Colors.white),
+              ConstrainedBox(
+                constraints: const BoxConstraints(
+                  minWidth: double.infinity,
+                  minHeight: 70,
+                  maxWidth: double.infinity,
+                  maxHeight: 90,
+                ),
+                child: Container(
+                  padding: const EdgeInsets.only(top: 26),
+                  height: 70,
+                  decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(60),
+                        topLeft: Radius.circular(60),
+                      ),
+                      color: Colors.white),
+                  child: const TextButton(
+                      onPressed: null,
+                      child: Text(
+                        'Sign Up',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Raleway',
+                          fontSize: 23,
+                          color: Color.fromRGBO(99, 25, 236, 1),
+                        ),
+                      )),
+                  // child: Column(
+                  //   children: const [
+                  //     Expanded(
+                  //       flex: 1,
+                  //       child: IconButton(
+                  //           onPressed: null,
+                  //           icon: Icon(
+                  //             Icons.minimize_rounded,
+                  //             size: 40,
+                  //             color: Color.fromRGBO(1, 1, 1, 0.7),
+                  //           )),
+                  //     ),
+                  //     SizedBox(height: 5),
+                  //     Expanded(
+                  //       flex: 2,
+                  //       child: TextButton(
+                  //           onPressed: null,
+                  //           child: Text(
+                  //             'LOGIN',
+                  //             style: TextStyle(
+                  //               color: Color.fromRGBO(99, 25, 236, 1),
+                  //             ),
+                  //           )),
+                  //     )
+                  //   ],
+                  // ),
+                ),
               )
             ],
           )
