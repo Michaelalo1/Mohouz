@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -239,22 +240,26 @@ class _HomeScreenState extends State<HomeScreen> {
                             showModalBottomSheet(
                               context: context,
                               builder: (context) {
-                                return Wrap(
-                                  children: [
-                                    // ListTile(
-                                    //   leading: Icon(Icons.share),
-                                    //   title: Text('Share'),
-                                    // ),
-                                    // ListTile(
-                                    //   leading: Icon(Icons.copy),
-                                    //   title: Text('Copy Link'),
-                                    // ),
-                                    // ListTile(
-                                    //   leading: Icon(Icons.edit),
-                                    //   title: Text('Edit'),
-                                    // ),
-                                  ],
+                                return const Scaffold(
+                                  backgroundColor:
+                                      Color.fromRGBO(99, 25, 236, 1),
                                 );
+                                // return Wrap(
+                                //   children: [
+                                //     ListTile(
+                                //       leading: Icon(Icons.share),
+                                //       title: Text('Share'),
+                                //     ),
+                                //     ListTile(
+                                //       leading: Icon(Icons.copy),
+                                //       title: Text('Copy Link'),
+                                //     ),
+                                //     ListTile(
+                                //       leading: Icon(Icons.edit),
+                                //       title: Text('Edit'),
+                                //     ),
+                                //   ],
+                                // );
                               },
                             );
                           },
