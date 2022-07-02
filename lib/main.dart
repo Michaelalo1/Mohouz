@@ -226,8 +226,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       color: Color.fromRGBO(99, 25, 236, 1),
                     ),
                     child: Column(
-                      children: const [
-                        IconButton(
+                      children: [
+                        const IconButton(
                             onPressed: null,
                             icon: Icon(
                               Icons.minimize_rounded,
@@ -235,7 +235,29 @@ class _HomeScreenState extends State<HomeScreen> {
                               color: Color.fromRGBO(255, 255, 255, 0.6),
                             )),
                         TextButton(
-                          onPressed: null,
+                          onPressed: () {
+                            showModalBottomSheet(
+                              context: context,
+                              builder: (context) {
+                                return Wrap(
+                                  children: [
+                                    // ListTile(
+                                    //   leading: Icon(Icons.share),
+                                    //   title: Text('Share'),
+                                    // ),
+                                    // ListTile(
+                                    //   leading: Icon(Icons.copy),
+                                    //   title: Text('Copy Link'),
+                                    // ),
+                                    // ListTile(
+                                    //   leading: Icon(Icons.edit),
+                                    //   title: Text('Edit'),
+                                    // ),
+                                  ],
+                                );
+                              },
+                            );
+                          },
                           child: Text(
                             'Login',
                             textAlign: TextAlign.center,
@@ -279,32 +301,6 @@ class _HomeScreenState extends State<HomeScreen> {
                           color: Color.fromRGBO(99, 25, 236, 1),
                         ),
                       )),
-                  // child: Column(
-                  //   children: const [
-                  //     Expanded(
-                  //       flex: 1,
-                  //       child: IconButton(
-                  //           onPressed: null,
-                  //           icon: Icon(
-                  //             Icons.minimize_rounded,
-                  //             size: 40,
-                  //             color: Color.fromRGBO(1, 1, 1, 0.7),
-                  //           )),
-                  //     ),
-                  //     SizedBox(height: 5),
-                  //     Expanded(
-                  //       flex: 2,
-                  //       child: TextButton(
-                  //           onPressed: null,
-                  //           child: Text(
-                  //             'LOGIN',
-                  //             style: TextStyle(
-                  //               color: Color.fromRGBO(99, 25, 236, 1),
-                  //             ),
-                  //           )),
-                  //     )
-                  //   ],
-                  // ),
                 ),
               )
             ],
