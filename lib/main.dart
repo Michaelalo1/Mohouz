@@ -242,6 +242,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               context: context,
                               builder: (context) {
                                 return Container(
+                                  color: Colors.grey,
                                   child: Container(
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.only(
