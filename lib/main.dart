@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -240,9 +241,16 @@ class _HomeScreenState extends State<HomeScreen> {
                             showModalBottomSheet(
                               context: context,
                               builder: (context) {
-                                return const Scaffold(
-                                  backgroundColor:
-                                      Color.fromRGBO(99, 25, 236, 1),
+                                return Container(
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.only(
+                                          topLeft: Radius.circular(30),
+                                          topRight: Radius.circular(30)),
+                                      color: Color.fromRGBO(99, 25, 236, 1),
+                                    ),
+                                    height: 400,
+                                  ),
                                 );
                                 // return Wrap(
                                 //   children: [
