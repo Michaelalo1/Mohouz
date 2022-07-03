@@ -20,16 +20,19 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
   late AnimationController controller;
+  late Animation animation;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     controller =
-        AnimationController(vsync: this, duration: const Duration(seconds: 2));
+        AnimationController(vsync: this, duration: const Duration(seconds: 7));
+    animation = CurvedAnimation(parent: controller, curve: Curves.decelerate);
     controller.forward();
-    controller.addStatusListener((status) {
+    animation.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
+        controller.reverse(from: 1);
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -38,7 +41,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
         );
       }
     });
-    controller.addListener(() {
+    animation.addListener(() {
       setState(() {});
     });
   }
@@ -46,7 +49,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color.fromRGBO(99, 25, 236, controller.value),
+        backgroundColor: Color.fromRGBO(99, 25, 236, animation.value),
         body: Center(
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
