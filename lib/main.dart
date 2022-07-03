@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
     // TODO: implement initState
     super.initState();
     controller =
-        AnimationController(vsync: this, duration: const Duration(seconds: 7));
+        AnimationController(vsync: this, duration: const Duration(seconds: 2));
     animation = CurvedAnimation(parent: controller, curve: Curves.decelerate);
     controller.forward();
     animation.addStatusListener((status) {
