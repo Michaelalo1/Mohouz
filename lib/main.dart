@@ -242,15 +242,20 @@ class _HomeScreenState extends State<HomeScreen> {
                               context: context,
                               builder: (context) {
                                 return Container(
-                                  color: Colors.grey,
+                                  decoration: const BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(0),
+                                        topRight: Radius.circular(0)),
+                                    color: Color.fromRGBO(117, 117, 117, 1),
+                                  ),
                                   child: Container(
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(30),
-                                          topRight: Radius.circular(30)),
+                                          topLeft: Radius.circular(40),
+                                          topRight: Radius.circular(40)),
                                       color: Color.fromRGBO(99, 25, 236, 1),
                                     ),
-                                    height: 400,
+                                    height: 800,
                                   ),
                                 );
                                 // return Wrap(
@@ -272,7 +277,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               },
                             );
                           },
-                          child: Text(
+                          child: const Text(
                             'Login',
                             textAlign: TextAlign.center,
                             style: TextStyle(
