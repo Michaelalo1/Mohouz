@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -33,6 +34,11 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
   void initState() {
     // TODO: implement initState
     super.initState();
+    Firebase.initializeApp().whenComplete(() {
+      print("completed");
+      setState(() {});
+    });
+
     controller =
         AnimationController(vsync: this, duration: const Duration(seconds: 3));
     animation = CurvedAnimation(parent: controller, curve: Curves.decelerate);
