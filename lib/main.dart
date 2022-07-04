@@ -358,8 +358,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                 child: ElevatedButton.icon(
                                     style: ElevatedButton.styleFrom(
                                       elevation: 20,
-                                      primary: Colors.green,
-                                      onPrimary: Colors.red,
+                                      primary: Colors.white,
+                                      onPrimary: Colors.deepPurpleAccent,
                                       minimumSize: Size(double.infinity, 50),
                                     ),
                                     onPressed: () {
