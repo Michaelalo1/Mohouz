@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "838855622957",
+    "project_id": "mohouz-ea108",
+    "storage_bucket": "mohouz-ea108.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:838855622957:android:fd839451491b6f9cbed3a4",
+        "android_client_info": {
+          "package_name": "com.example.mohouz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "838855622957-sqec25vtul8uj1jkiv1c1eegvl662h3c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqTp-X09nNmmPgp2hS3Pv--1eafMR3mF8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "838855622957-sqec25vtul8uj1jkiv1c1eegvl662h3c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

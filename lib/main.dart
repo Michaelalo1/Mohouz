@@ -1,14 +1,21 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mohouz/google_sign_in.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MaterialApp(
-      title: 'Mohouz',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyApp()));
+  runApp(ChangeNotifierProvider(
+    create: (context) => GoogleSignInProvider(),
+    child: MaterialApp(
+        title: 'Mohouz',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: const MyApp()),
+  ));
 }
 
 class MyApp extends StatefulWidget {
@@ -27,7 +34,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
     // TODO: implement initState
     super.initState();
     controller =
-        AnimationController(vsync: this, duration: const Duration(seconds: 2));
+        AnimationController(vsync: this, duration: const Duration(seconds: 3));
     animation = CurvedAnimation(parent: controller, curve: Curves.decelerate);
     controller.forward();
     animation.addStatusListener((status) {
@@ -36,7 +43,17 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => const HomeScreen(),
+            builder: (context) => StreamBuilder(
+                stream: FirebaseAuth.instance.authStateChanges(),
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return Center(child: CircularProgressIndicator());
+                  } else if (snapshot.hasError) {
+                    return Center(child: Text('Something went wrong'));
+                  } else {
+                    return HomeScreen();
+                  }
+                }),
           ),
         );
       }
@@ -311,9 +328,71 @@ class _HomeScreenState extends State<HomeScreen> {
                         topLeft: Radius.circular(60),
                       ),
                       color: Colors.white),
-                  child: const TextButton(
-                      onPressed: null,
-                      child: Text(
+                  child: TextButton(
+                      onPressed: () {
+                        showModalBottomSheet(
+                          context: context,
+                          builder: (context) {
+                            return Container(
+                              decoration: const BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(0),
+                                    topRight: Radius.circular(0)),
+                                color: Color.fromRGBO(117, 117, 117, 1),
+                              ),
+                              child: Container(
+                                decoration: const BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(40),
+                                      topRight: Radius.circular(40)),
+                                  color: Colors.white,
+                                ),
+                                height: 800,
+                                width: double.infinity,
+                                child: ElevatedButton.icon(
+                                    style: ElevatedButton.styleFrom(
+                                      elevation: 20,
+                                      primary: Colors.green,
+                                      onPrimary: Colors.red,
+                                      minimumSize: Size(double.infinity, 50),
+                                    ),
+                                    onPressed: () {
+                                      final provider =
+                                          Provider.of<GoogleSignInProvider>(
+                                              context,
+                                              listen: false);
+                                      provider.googleLogin();
+                                    },
+                                    icon: const FaIcon(
+                                      FontAwesomeIcons.google,
+                                      color: Colors.blue,
+                                    ),
+                                    label: const Text(
+                                      'Sign Up with Google',
+                                      style: TextStyle(color: Colors.black),
+                                    )),
+                              ),
+                            );
+                            // return Wrap(
+                            //   children: [
+                            //     ListTile(
+                            //       leading: Icon(Icons.share),
+                            //       title: Text('Share'),
+                            //     ),
+                            //     ListTile(
+                            //       leading: Icon(Icons.copy),
+                            //       title: Text('Copy Link'),
+                            //     ),
+                            //     ListTile(
+                            //       leading: Icon(Icons.edit),
+                            //       title: Text('Edit'),
+                            //     ),
+                            //   ],
+                            // );
+                          },
+                        );
+                      },
+                      child: const Text(
                         'Sign Up',
                         textAlign: TextAlign.center,
                         style: TextStyle(
