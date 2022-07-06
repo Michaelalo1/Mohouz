@@ -55,7 +55,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
                   if (snapshot.connectionState == ConnectionState.waiting) {
                     return Center(child: CircularProgressIndicator());
                   } else if (snapshot.hasError) {
-                    return Center(child: Text('Something went wrong'));
+                    return Center(child: Text('an error occured'));
                   } else {
                     return HomeScreen();
                   }
