@@ -258,7 +258,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         const IconButton(
                             onPressed: null,
                             icon: Icon(
-                              Icons.minimize_rounded,
+                              Icons.minimize,
                               size: 40,
                               color: Color.fromRGBO(255, 255, 255, 0.6),
                             )),
