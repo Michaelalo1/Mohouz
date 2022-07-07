@@ -282,6 +282,40 @@ class _HomeScreenState extends State<HomeScreen> {
                                       color: Color.fromRGBO(99, 25, 236, 1),
                                     ),
                                     height: 800,
+                                    child: Container(
+                                      decoration: const BoxDecoration(
+                                        borderRadius: BorderRadius.only(
+                                            topLeft: Radius.circular(40),
+                                            topRight: Radius.circular(40)),
+                                        color: Colors.white,
+                                      ),
+                                      height: 800,
+                                      width: double.infinity,
+                                      child: ElevatedButton.icon(
+                                          style: ElevatedButton.styleFrom(
+                                            elevation: 20,
+                                            primary: Colors.white,
+                                            onPrimary: Colors.deepPurpleAccent,
+                                            minimumSize:
+                                                Size(double.infinity, 50),
+                                          ),
+                                          onPressed: () {
+                                            final provider = Provider.of<
+                                                    GoogleSignInProvider>(
+                                                context,
+                                                listen: false);
+                                            provider.googleLogin();
+                                          },
+                                          icon: const FaIcon(
+                                            FontAwesomeIcons.google,
+                                            color: Colors.blue,
+                                          ),
+                                          label: const Text(
+                                            'Sign Up with Google',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          )),
+                                    ),
                                   ),
                                 );
                                 // return Wrap(
