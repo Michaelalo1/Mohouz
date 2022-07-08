@@ -410,37 +410,42 @@ class _HomeScreenState extends State<HomeScreen> {
                                   width: double.infinity,
                                   child: Column(
                                     children: [
-                                      TextField(),
-                                      TextField(),
-                                      TextField(),
-                                      TextField(),
-                                      ElevatedButton(
-                                          onPressed: null,
-                                          child: Text('submit')),
-                                      ElevatedButton.icon(
-                                          style: ElevatedButton.styleFrom(
-                                            elevation: 20,
-                                            primary: Colors.white,
-                                            onPrimary: Colors.deepPurpleAccent,
-                                            minimumSize:
-                                                Size(double.infinity, 50),
-                                          ),
-                                          onPressed: () {
-                                            final provider = Provider.of<
-                                                    GoogleSignInProvider>(
-                                                context,
-                                                listen: false);
-                                            provider.googleLogin();
-                                          },
-                                          icon: const FaIcon(
-                                            FontAwesomeIcons.google,
-                                            color: Colors.blue,
-                                          ),
-                                          label: const Text(
-                                            'Sign Up with Google',
-                                            style:
-                                                TextStyle(color: Colors.black),
-                                          )),
+                                      Expanded(child: TextField()),
+                                      Expanded(child: TextField()),
+                                      Expanded(child: TextField()),
+                                      Expanded(child: TextField()),
+                                      Expanded(
+                                        child: ElevatedButton(
+                                            onPressed: null,
+                                            child: Text('submit')),
+                                      ),
+                                      Expanded(
+                                        child: ElevatedButton.icon(
+                                            style: ElevatedButton.styleFrom(
+                                              elevation: 20,
+                                              primary: Colors.white,
+                                              onPrimary:
+                                                  Colors.deepPurpleAccent,
+                                              minimumSize:
+                                                  Size(double.infinity, 50),
+                                            ),
+                                            onPressed: () {
+                                              final provider = Provider.of<
+                                                      GoogleSignInProvider>(
+                                                  context,
+                                                  listen: false);
+                                              provider.googleLogin();
+                                            },
+                                            icon: const FaIcon(
+                                              FontAwesomeIcons.google,
+                                              color: Colors.blue,
+                                            ),
+                                            label: const Text(
+                                              'Sign Up with Google',
+                                              style: TextStyle(
+                                                  color: Colors.black),
+                                            )),
+                                      ),
                                     ],
                                   ),
                                 ),
