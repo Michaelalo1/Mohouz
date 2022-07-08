@@ -293,11 +293,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                       width: double.infinity,
                                       child: Column(
                                         children: [
-                                          TextField(),
-                                          TextField(),
-                                          ElevatedButton(
-                                              onPressed: null,
-                                              child: Text('submit')),
+                                          Expanded(child: TextField()),
+                                          Expanded(child: TextField()),
+                                          Expanded(
+                                            child: ElevatedButton(
+                                                onPressed: null,
+                                                child: Text('submit')),
+                                          ),
                                           ElevatedButton.icon(
                                               style: ElevatedButton.styleFrom(
                                                 elevation: 20,
@@ -390,47 +392,57 @@ class _HomeScreenState extends State<HomeScreen> {
                                     topRight: Radius.circular(0)),
                                 color: Color.fromRGBO(117, 117, 117, 1),
                               ),
-                              child: Container(
-                                decoration: const BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(40),
-                                      topRight: Radius.circular(40)),
-                                  color: Colors.white,
+                              child: ConstrainedBox(
+                                constraints: const BoxConstraints(
+                                  minWidth: double.infinity,
+                                  minHeight: 30,
+                                  maxWidth: double.infinity,
+                                  maxHeight: 30,
                                 ),
-                                height: 800,
-                                width: double.infinity,
-                                child: Column(
-                                  children: [
-                                    TextField(),
-                                    TextField(),
-                                    TextField(),
-                                    TextField(),
-                                    ElevatedButton(
-                                        onPressed: null, child: Text('submit')),
-                                    ElevatedButton.icon(
-                                        style: ElevatedButton.styleFrom(
-                                          elevation: 20,
-                                          primary: Colors.white,
-                                          onPrimary: Colors.deepPurpleAccent,
-                                          minimumSize:
-                                              Size(double.infinity, 50),
-                                        ),
-                                        onPressed: () {
-                                          final provider =
-                                              Provider.of<GoogleSignInProvider>(
-                                                  context,
-                                                  listen: false);
-                                          provider.googleLogin();
-                                        },
-                                        icon: const FaIcon(
-                                          FontAwesomeIcons.google,
-                                          color: Colors.blue,
-                                        ),
-                                        label: const Text(
-                                          'Sign Up with Google',
-                                          style: TextStyle(color: Colors.black),
-                                        )),
-                                  ],
+                                child: Container(
+                                  decoration: const BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(40),
+                                        topRight: Radius.circular(40)),
+                                    color: Colors.white,
+                                  ),
+                                  height: 800,
+                                  width: double.infinity,
+                                  child: Column(
+                                    children: [
+                                      TextField(),
+                                      TextField(),
+                                      TextField(),
+                                      TextField(),
+                                      ElevatedButton(
+                                          onPressed: null,
+                                          child: Text('submit')),
+                                      ElevatedButton.icon(
+                                          style: ElevatedButton.styleFrom(
+                                            elevation: 20,
+                                            primary: Colors.white,
+                                            onPrimary: Colors.deepPurpleAccent,
+                                            minimumSize:
+                                                Size(double.infinity, 50),
+                                          ),
+                                          onPressed: () {
+                                            final provider = Provider.of<
+                                                    GoogleSignInProvider>(
+                                                context,
+                                                listen: false);
+                                            provider.googleLogin();
+                                          },
+                                          icon: const FaIcon(
+                                            FontAwesomeIcons.google,
+                                            color: Colors.blue,
+                                          ),
+                                          label: const Text(
+                                            'Sign Up with Google',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          )),
+                                    ],
+                                  ),
                                 ),
                               ),
                             );
