@@ -395,11 +395,13 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: ConstrainedBox(
                                 constraints: const BoxConstraints(
                                   minWidth: double.infinity,
-                                  minHeight: 30,
+                                  minHeight: 400,
                                   maxWidth: double.infinity,
-                                  maxHeight: 30,
+                                  maxHeight: 800,
                                 ),
                                 child: Container(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 20, vertical: 50.0),
                                   decoration: const BoxDecoration(
                                     borderRadius: BorderRadius.only(
                                         topLeft: Radius.circular(40),
@@ -410,19 +412,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                   width: double.infinity,
                                   child: Column(
                                     children: [
-                                      Expanded(child: TextField()),
-                                      Expanded(child: TextField()),
-                                      Expanded(child: TextField()),
-                                      Expanded(child: TextField()),
-                                      Expanded(
-                                        child: ElevatedButton(
-                                            onPressed: null,
-                                            child: Text('submit')),
-                                      ),
                                       Expanded(
                                         child: ElevatedButton.icon(
                                             style: ElevatedButton.styleFrom(
-                                              elevation: 20,
+                                              elevation: 10,
                                               primary: Colors.white,
                                               onPrimary:
                                                   Colors.deepPurpleAccent,
@@ -445,6 +438,16 @@ class _HomeScreenState extends State<HomeScreen> {
                                               style: TextStyle(
                                                   color: Colors.black),
                                             )),
+                                      ),
+                                      SizedBox(height: 25),
+                                      Expanded(child: TextField()),
+                                      Expanded(child: TextField()),
+                                      Expanded(child: TextField()),
+                                      Expanded(child: TextField()),
+                                      Expanded(
+                                        child: ElevatedButton(
+                                            onPressed: null,
+                                            child: Text('submit')),
                                       ),
                                     ],
                                   ),
