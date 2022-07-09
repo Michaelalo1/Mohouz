@@ -1,8 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mohouz/google_sign_in.dart';
 import 'package:provider/provider.dart';
@@ -295,7 +293,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         children: [
                                           Expanded(child: TextField()),
                                           Expanded(child: TextField()),
-                                          Expanded(
+                                          const Expanded(
                                             child: ElevatedButton(
                                                 onPressed: null,
                                                 child: Text('submit')),
@@ -395,13 +393,13 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: ConstrainedBox(
                                 constraints: const BoxConstraints(
                                   minWidth: double.infinity,
-                                  minHeight: 400,
+                                  minHeight: 500,
                                   maxWidth: double.infinity,
-                                  maxHeight: 800,
+                                  maxHeight: 900,
                                 ),
                                 child: Container(
                                   padding: EdgeInsets.symmetric(
-                                      horizontal: 20, vertical: 50.0),
+                                      horizontal: 40, vertical: 50.0),
                                   decoration: const BoxDecoration(
                                     borderRadius: BorderRadius.only(
                                         topLeft: Radius.circular(40),
@@ -411,35 +409,48 @@ class _HomeScreenState extends State<HomeScreen> {
                                   height: 800,
                                   width: double.infinity,
                                   child: Column(
-                                    children: [
+                                    children: const [
                                       Expanded(
-                                        child: ElevatedButton.icon(
-                                            style: ElevatedButton.styleFrom(
-                                              elevation: 10,
-                                              primary: Colors.white,
-                                              onPrimary:
-                                                  Colors.deepPurpleAccent,
-                                              minimumSize:
-                                                  Size(double.infinity, 50),
-                                            ),
-                                            onPressed: () {
-                                              final provider = Provider.of<
-                                                      GoogleSignInProvider>(
-                                                  context,
-                                                  listen: false);
-                                              provider.googleLogin();
-                                            },
-                                            icon: const FaIcon(
-                                              FontAwesomeIcons.google,
-                                              color: Colors.blue,
-                                            ),
-                                            label: const Text(
-                                              'Sign Up with Google',
-                                              style: TextStyle(
-                                                  color: Colors.black),
-                                            )),
+                                        child: Text(
+                                          'Sign up for Mohouz',
+                                          style: TextStyle(
+                                              fontFamily: 'Raleway',
+                                              color: Color.fromRGBO(
+                                                  99, 25, 236, 0.8),
+                                              fontSize: 22,
+                                              fontWeight: FontWeight.w600),
+                                        ),
                                       ),
-                                      SizedBox(height: 25),
+                                      // Expanded(
+                                      //   child: ElevatedButton.icon(
+                                      //       style: ElevatedButton.styleFrom(
+                                      //         elevation: 1,
+                                      //         primary: Colors.white,
+                                      //         onPrimary:
+                                      //             Colors.deepPurpleAccent,
+                                      //         minimumSize:
+                                      //             Size(double.infinity, 50),
+                                      //       ),
+                                      //       onPressed: () {
+                                      //         final provider = Provider.of<
+                                      //                 GoogleSignInProvider>(
+                                      //             context,
+                                      //             listen: false);
+                                      //         provider.googleLogin();
+                                      //       },
+                                      //       icon: const FaIcon(
+                                      //         FontAwesomeIcons.google,
+                                      //         color: Color.fromRGBO(
+                                      //             66, 133, 244, 1),
+                                      //       ),
+                                      //       label: const Text(
+                                      //         'Sign Up With Google',
+                                      //         style: TextStyle(
+                                      //             fontFamily: 'Raleway',
+                                      //             color: Colors.black),
+                                      //       )),
+                                      // ),
+                                      // SizedBox(height: 5),
                                       Expanded(child: TextField()),
                                       Expanded(child: TextField()),
                                       Expanded(child: TextField()),
