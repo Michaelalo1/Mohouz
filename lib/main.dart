@@ -272,6 +272,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                         topRight: Radius.circular(0)),
                                     color: Color.fromRGBO(117, 117, 117, 1),
                                   ),
+
+                                  //LOGIN SCREEN
+                                  // LOGIN SCREEN
                                   child: Container(
                                     decoration: const BoxDecoration(
                                       borderRadius: BorderRadius.only(
@@ -281,6 +284,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ),
                                     height: 800,
                                     child: Container(
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 25, vertical: 50),
                                       decoration: const BoxDecoration(
                                         borderRadius: BorderRadius.only(
                                             topLeft: Radius.circular(40),
@@ -291,16 +296,20 @@ class _HomeScreenState extends State<HomeScreen> {
                                       width: double.infinity,
                                       child: Column(
                                         children: [
-                                          Expanded(child: TextField()),
-                                          Expanded(child: TextField()),
                                           const Expanded(
-                                            child: ElevatedButton(
-                                                onPressed: null,
-                                                child: Text('submit')),
+                                            flex: 1,
+                                            child: Text(
+                                              'Login',
+                                              style: TextStyle(
+                                                  fontFamily: 'Raleway',
+                                                  color: Colors.black,
+                                                  fontSize: 22,
+                                                  fontWeight: FontWeight.w500),
+                                            ),
                                           ),
                                           ElevatedButton.icon(
                                               style: ElevatedButton.styleFrom(
-                                                elevation: 20,
+                                                elevation: 5,
                                                 primary: Colors.white,
                                                 onPrimary:
                                                     Colors.deepPurpleAccent,
@@ -319,10 +328,52 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 color: Colors.blue,
                                               ),
                                               label: const Text(
-                                                'Sign Up with Google',
+                                                'Sign in with Google',
                                                 style: TextStyle(
+                                                    fontSize: 18,
                                                     color: Colors.black),
                                               )),
+                                          SizedBox(height: 20),
+                                          const Expanded(
+                                            flex: 1,
+                                            child: Text(
+                                              'OR',
+                                              style: TextStyle(
+                                                  fontFamily: 'Raleway',
+                                                  color: Color.fromRGBO(
+                                                      000, 000, 000, 0.8),
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.w500),
+                                            ),
+                                          ),
+                                          const Expanded(
+                                            flex: 1,
+                                            child: Text(
+                                              'Sign in with Email and Password Below',
+                                              style: TextStyle(
+                                                  fontFamily: 'Raleway',
+                                                  color: Color.fromRGBO(
+                                                      000, 000, 000, 0.8),
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.w500),
+                                            ),
+                                          ),
+                                          Expanded(flex: 2, child: TextField()),
+                                          Expanded(flex: 2, child: TextField()),
+                                          Expanded(
+                                            flex: 2,
+                                            child: ElevatedButton(
+                                                style: ElevatedButton.styleFrom(
+                                                  elevation: 5,
+                                                  primary: Colors.white,
+                                                  onPrimary:
+                                                      Colors.deepPurpleAccent,
+                                                  minimumSize:
+                                                      Size(double.infinity, 50),
+                                                ),
+                                                onPressed: null,
+                                                child: Text('submit')),
+                                          ),
                                         ],
                                       ),
                                     ),
