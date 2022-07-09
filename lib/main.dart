@@ -362,6 +362,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
+
+              // SIGN UP SCREEN
+              // SIGN UP SCREEN
+
               ConstrainedBox(
                 constraints: const BoxConstraints(
                   minWidth: double.infinity,
@@ -409,16 +413,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                   height: 800,
                                   width: double.infinity,
                                   child: Column(
-                                    children: const [
+                                    children: [
                                       Expanded(
                                         child: Text(
-                                          'Sign up for Mohouz',
+                                          'Sign up',
                                           style: TextStyle(
                                               fontFamily: 'Raleway',
-                                              color: Color.fromRGBO(
-                                                  99, 25, 236, 0.8),
+                                              color: Colors.black,
                                               fontSize: 22,
-                                              fontWeight: FontWeight.w600),
+                                              fontWeight: FontWeight.w500),
                                         ),
                                       ),
                                       // Expanded(
@@ -451,14 +454,38 @@ class _HomeScreenState extends State<HomeScreen> {
                                       //       )),
                                       // ),
                                       // SizedBox(height: 5),
-                                      Expanded(child: TextField()),
-                                      Expanded(child: TextField()),
-                                      Expanded(child: TextField()),
-                                      Expanded(child: TextField()),
+                                      Expanded(
+                                        child: TextField(
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: TextField(
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: TextField(
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: TextField(
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
                                       Expanded(
                                         child: ElevatedButton(
-                                            onPressed: null,
-                                            child: Text('submit')),
+                                          style: ElevatedButton.styleFrom(
+                                            elevation: 20,
+                                            primary: Colors.white,
+                                            onPrimary: Colors.deepPurpleAccent,
+                                            minimumSize:
+                                                Size(double.infinity, 50),
+                                          ),
+                                          onPressed: null,
+                                          child: Text('submit'),
+                                        ),
                                       ),
                                     ],
                                   ),
